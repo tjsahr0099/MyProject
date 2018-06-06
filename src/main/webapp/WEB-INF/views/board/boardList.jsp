@@ -7,6 +7,40 @@
 <title>Insert title here</title>
 </head>
 <body>
-게시판리스트
+	<div class="title">
+		자유 게시판
+	</div>
+	<div class="tableDiv">
+	
+		<table>
+			<colgroup>
+			<col width="10%" />
+			<col width="50%" />
+			<col width="10%" />
+			<col width="20%" />
+			<col width="10%" />
+			</colgroup>
+			<thead>
+				<tr><td colspan="2">제목</td><td>작성자</td><td>작성일</td><td>조회</td></tr>
+			</thead>
+			<tbody>
+				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
+				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
+				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
+				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
+				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
+				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
+				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
+				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
+				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
+				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
+				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
+				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
+				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
+				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
+				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>

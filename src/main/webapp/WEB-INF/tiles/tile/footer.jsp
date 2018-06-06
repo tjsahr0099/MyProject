@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	푸터
+	<hr>
+	<h6>made by Kim.Seon.Mok</h6>
 </body>
 </html>
