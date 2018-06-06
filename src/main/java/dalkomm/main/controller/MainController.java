@@ -19,7 +19,7 @@ public class MainController {
         log.debug("메인페이지");
         log.debug(aaa);
         log.debug(bbb);
-        mv.setViewName("home");
+        mv.setViewName("/home");
         return mv;
     }
 	

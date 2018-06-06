@@ -12,6 +12,7 @@
         <org.springframework-version>3.2.4.RELEASE</org.springframework-version>
         <org.aspectj-version>1.7.3</org.aspectj-version>
         <org.slf4j-version>1.6.6</org.slf4j-version>
+        <org.apache.tiles-version>3.0.5</org.apache.tiles-version>
     </properties>
      
     <repositories>
@@ -313,6 +314,34 @@
             <version>4.7</version>
             <scope>test</scope>
         </dependency>  
+        
+        <!-- tiles -->
+        <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-servlet</artifactId>
+            <version>${org.apache.tiles-version}</version>
+        </dependency>
+         <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-api</artifactId>
+            <version>${org.apache.tiles-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-jsp</artifactId>
+            <version>${org.apache.tiles-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-core</artifactId>
+            <version>${org.apache.tiles-version}</version>
+        </dependency> 
+        <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-template</artifactId>
+            <version>${org.apache.tiles-version}</version>
+        </dependency> 
+
     </dependencies>
      
      
