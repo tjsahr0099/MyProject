@@ -29,6 +29,9 @@ public class LoggerInterceptor extends HandlerInterceptorAdapter {
         	}
             log.debug("======================================           END          ======================================\n");
         }
+        long timestamp = System.currentTimeMillis();
+        modelAndView.addObject("contextPath", request.getContextPath());
+        modelAndView.addObject("timestamp", timestamp);
     }
 }
 

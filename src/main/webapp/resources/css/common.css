@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+
+.body{width:1080px;height:1100px;margin:auto;}
+
+.contents{width:1080px;height:700px;}
+.content{background-color: #00aa33;width:80%;height:700px;float: left;}
+.leftMenu{width:19.8%;height:700px;float: left;border:solid 1px #888888;}
+.leftMenu_cont{width:95%;margin:auto;}
+
+.header{width:1080px;height:260px;background-image: url("../image/banner.png");margin:20px 0px 20px 0px;background-color:black;}
+.footer{background-color: green;width:1080px;height:100px;}
+
