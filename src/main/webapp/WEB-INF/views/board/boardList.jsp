@@ -95,8 +95,10 @@ $(function(){
 			<option>내용</option>
 			<option>작성자</option>
 		</select>
-		<input type="text" name="searchWord" value=""/>
-		<button type="button">검색</button>
+		<form method="post" name="frm">
+			<input type="text" name="searchWord" value=""/>
+			<button type="button">검색</button>
+		</form>
 	</div>
 </body>
 </html>

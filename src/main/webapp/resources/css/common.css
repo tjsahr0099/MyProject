@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+input.w200{width:200px;}
+input.w300{width:300px;}
+input.w400{width:400px;}
+
 
 .body{width:1080px;height:1100px;margin:auto;}
 
@@ -21,4 +25,8 @@
 
 .header{width:1080px;height:260px;background-image: url("../image/banner.png");margin:20px 0px 20px 0px;background-color:black;}
 .footer{width:1080px;height:50px;}
+
+
+.writeFormDiv table{width: 90%;margin: auto;border-collapse:collapse;border:solid 1px black;}
+.writeFormDiv table tr td textarea{width: 768px;height:300px;}
 

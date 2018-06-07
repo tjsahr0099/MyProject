@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="common">
+     
+    <select id="selectSeq" parameterType="hashmap" resultType="java.lang.String">
+            SELECT CONCAT('SEQ_',LPAD(SEQ_NO,6,'0'))  AS SEQ_NO
+            FROM T_ALL_SEQ
+            WHERE SEQ_NAME = #{seqName}
+    </select>
+    
+    <update id="increaseSeq" parameterType="hashmap">
+            UPDATE T_ALL_SEQ SET SEQ_NO = SEQ_NO + 1
+            WHERE SEQ_NAME = #{seqName}
+    </update>
+     
+</mapper>

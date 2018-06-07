@@ -34,7 +34,7 @@
     
     <!-- 특정 로거 설정 -->
     <logger name="org.springframework" additivity="false">
-        <level value="ERROR" />
+        <level value="DEBUG" />
         <appender-ref ref="console" />
     </logger> 
  

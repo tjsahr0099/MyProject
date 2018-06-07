@@ -26,12 +26,13 @@ public class LoggerInterceptor extends HandlerInterceptorAdapter {
         if (log.isDebugEnabled()) {
         	if(modelAndView!=null) {
         		log.debug("views \t:   " + modelAndView.getViewName() + ".jsp");
+        		long timestamp = System.currentTimeMillis();
+                modelAndView.addObject("contextPath", request.getContextPath());
+                modelAndView.addObject("timestamp", timestamp);
         	}
             log.debug("======================================           END          ======================================\n");
         }
-        long timestamp = System.currentTimeMillis();
-        modelAndView.addObject("contextPath", request.getContextPath());
-        modelAndView.addObject("timestamp", timestamp);
+        
     }
 }
 

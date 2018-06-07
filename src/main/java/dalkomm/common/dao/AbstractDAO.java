@@ -1,6 +1,8 @@
 package dalkomm.common.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -54,5 +56,21 @@ public class AbstractDAO {
     public List selectList(String queryId, Object params){
         printQueryId(queryId);
         return sqlSession.selectList(queryId,params);
+    }
+    
+    //시퀀스 테이블에서 시퀀스를 증가시켜 조회한다.
+    public String getNextSeq(String seqName){
+        printQueryId("getNextSeq : " + seqName);
+        Map<String,String> params = new HashMap<String,String>();
+        params.put("seqName", seqName);
+        String result = "0";
+        if(sqlSession.update("common.increaseSeq", params)>0) {
+        	result = sqlSession.selectOne("common.selectSeq", params);
+        }else{
+        	log.debug("시퀀스가 증가되지 않았습니다. T_ALL_SEQ 테이블을 조회해 보세요.");
+        	result = "0";
+        }
+        
+        return result;
     }
 }

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="board">
+     
+     <select id="selectBoardList" parameterType="hashmap" resultType="hashmap">
+        <![CDATA[
+            SELECT *
+            FROM T_USER
+        ]]>
+    </select>
+    
+    <insert id="insertBoard" parameterType="hashmap">
+    	INSERT INTO T_BOARD(BOARD_SEQ
+					,TITLE
+					,CONT
+					,WRITE_USER_SEQ
+					,WRITE_DATE
+					,DEPTH
+					,PARENT_BOARD_SEQ
+					,SECRET_YN
+					<if test="(secretYn != null) and (secretYn=='Y')">,SECRET_PASSWORD</if>) 
+		VALUES(#{boardSeq}
+				,#{title}
+				,#{cont}
+				,#{writeUserSeq}
+				,now()
+				,#{depth}
+				,<if test="parentBoardSeq != null">#{parentBoardSeq}</if><if test="parentBoardSeq == null">#{boardSeq}</if>
+				<if test="secretYn != null">,#{secretYn}</if><if test="secretYn == null">,'N'</if>
+				<if test="(secretYn != null) and (secretYn=='Y')">,#{secretPassword}</if>
+				
+				)
+    
+    </insert>
+     
+</mapper>
