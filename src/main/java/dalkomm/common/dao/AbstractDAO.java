@@ -59,7 +59,7 @@ public class AbstractDAO {
     }
     
     //시퀀스 테이블에서 시퀀스를 증가시켜 조회한다.
-    public String getNextSeq(String seqName){
+    public String getNextSeq(String seqName){   
         printQueryId("getNextSeq : " + seqName);
         Map<String,String> params = new HashMap<String,String>();
         params.put("seqName", seqName);
