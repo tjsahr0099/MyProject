@@ -10,6 +10,11 @@
 .tableDiv table tr td{border-bottom:solid 1px #e5e5e5;padding-top:3px;padding-bottom:3px;}
 .tableDiv table .center{text-align:center;}
 .title{border-bottom:solid 1px #888888;border-top:solid 2px #888888;margin-top:5px;margin-bottom:5px;margin-right:2.5%;margin-left:2.5%;padding:10px;}
+.paging{text-align:center;margin-top:20px;}
+.paging a{padding:5px;border:solid 1px black;display:inline-block;vertical-align: middle;width: 20px;}
+.paging .arrow{}
+.searchDiv{margin-top:20px;text-align:center;}
+.buttonDiv{margin-top:20px;margin-right:50px;text-align:right;}
 
 .leftMenu{width:19.8%;height:750px;float: left;border:solid 1px #888888;border-radius: 0.5em;}
 .leftMenu_cont{width:95%;margin:auto;}

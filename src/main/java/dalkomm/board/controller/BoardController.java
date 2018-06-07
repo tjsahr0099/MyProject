@@ -13,8 +13,14 @@ Logger log = Logger.getLogger(this.getClass());
 	@RequestMapping(value="/board/boardList.do")
 	public ModelAndView boardList() throws Exception{
         ModelAndView mv = new ModelAndView("");
-        log.debug("게시판");
         mv.setViewName("/board/boardList");
+        return mv;
+    }
+	
+	@RequestMapping(value="/board/boardWrite.do")
+	public ModelAndView boardWrite() throws Exception{
+        ModelAndView mv = new ModelAndView("");
+        mv.setViewName("/board/boardWrite");
         return mv;
     }
 
