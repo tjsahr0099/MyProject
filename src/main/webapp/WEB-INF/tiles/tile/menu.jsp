@@ -14,6 +14,7 @@
 		<h1>임시메뉴</h1>
 		<ul>
 			<li><a href="${contextPath }/board/boardList.do">게시판</a></li>
+			<li><a href="${contextPath }/card/cardCreate.do">카드생성</a></li>
 		</ul>
 	</div>
 </body>

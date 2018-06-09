@@ -30,3 +30,11 @@ input.w400{width:400px;}
 .writeFormDiv table{width: 90%;margin: auto;border-collapse:collapse;border:solid 1px black;}
 .writeFormDiv table tr td textarea{width: 768px;height:300px;}
 
+
+
+.cardBodyDiv{text-align:center;width:100%;}
+.cardBodyDiv .cardImgWrap{width:300px;height:437px;display: inline-block;position:relative;}
+.cardBodyDiv .cardImgWrap .templit{width:300px;height:437px;    position: relative;}
+.cardBodyDiv .cardImgWrap .mark{width:30px;height:30px;position:absolute;top: 20px;left: 252px;}
+.cardBodyDiv .cardImgWrap .mainImg{width:230px;height:230px;position:absolute;top:80px;left:35px;}
+.cardBodyDiv .cardImgWrap .cardTemplitWrap{background-color:black;height:437px;}

@@ -14,6 +14,8 @@
 <!-- javascript -->
 <script type="text/javascript" src="${contextPath }/resources/js/jquery/jquery-3.3.1.min.js" ></script>
 <script type="text/javascript" src="${contextPath }/resources/js/common.js" ></script>
+<script type="text/javascript" src="${contextPath }/resources/js/html2canvas/html2canvas.min.js" ></script>
+<script type="text/javascript" src="${contextPath }/resources/js/fileSaver/fileSaver.js" ></script>
 
 </head>
 <body>
