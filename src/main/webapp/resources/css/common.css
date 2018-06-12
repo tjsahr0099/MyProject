@@ -8,24 +8,19 @@ input.w400{width:400px;}
 .body{width:1080px;height:1100px;margin:auto;}
 
 .contents{width:1080px;height:750px;}
-.content{width:80%;height:750px;float: left;}
-.tableDiv table{width: 90%;margin: auto;border-collapse:collapse;}
-.tableDiv table thead{text-align:center;}
-.tableDiv table tr td{border-bottom:solid 1px #e5e5e5;padding-top:3px;padding-bottom:3px;}
-.tableDiv table .center{text-align:center;}
-.title{border-bottom:solid 1px #888888;border-top:solid 2px #888888;margin-top:5px;margin-bottom:5px;margin-right:2.5%;margin-left:2.5%;padding:10px;}
+.content{width:80%;height:750px;float: left;    padding: 30px;}
+
+.title{border-bottom:solid 1px #888888;border-top:solid 2px #888888;margin-top:5px;margin-bottom:5px;}
 .paging{text-align:center;margin-top:20px;}
-.paging a{padding:5px;border:solid 1px black;display:inline-block;vertical-align: middle;width: 20px;}
-.paging .arrow{}
+
 .searchDiv{margin-top:20px;text-align:center;}
 .buttonDiv{margin-top:20px;margin-right:50px;text-align:right;}
 
-.leftMenu{width:19.8%;height:750px;float: left;border:solid 1px #888888;border-radius: 0.5em;}
-.leftMenu_cont{width:95%;margin:auto;}
+.leftMenu{width:19.8%;height:750px;float: left;background-color: #f1f1f1;border-radius: 0.5em;}
+.sidenav{width:100%;margin-top:20px;}
 
 .header{width:1080px;height:260px;background-image: url("../image/banner.png");margin:20px 0px 20px 0px;background-color:black;}
 .footer{width:1080px;height:50px;}
-
 
 .writeFormDiv table{width: 90%;margin: auto;border-collapse:collapse;border:solid 1px black;}
 .writeFormDiv table tr td textarea{width: 768px;height:300px;}

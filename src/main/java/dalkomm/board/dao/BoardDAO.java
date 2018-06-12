@@ -1,5 +1,6 @@
 package dalkomm.board.dao;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Repository;
@@ -20,6 +21,14 @@ public class BoardDAO extends AbstractDAO{
 		
 		
 		return (int) insert("board.insertBoard", params);
+	}
+
+	public List<Object> getBoardList(Map<String, Object> params) {
+		return selectList("board.getBoardList", params);
+	}
+
+	public int getBoardListCnt(Map<String, Object> params) {
+		return (int) selectOne("board.getBoardListCnt", params);
 	}
 
 }

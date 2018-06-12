@@ -28,6 +28,7 @@ public class LoggerInterceptor extends HandlerInterceptorAdapter {
         		log.debug("views \t:   " + modelAndView.getViewName() + ".jsp");
         		long timestamp = System.currentTimeMillis();
                 modelAndView.addObject("contextPath", request.getContextPath());
+                modelAndView.addObject("uri", request.getRequestURI());
                 modelAndView.addObject("timestamp", timestamp);
         	}
             log.debug("======================================           END          ======================================\n");

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>타이트트으으</title>
 
 <script type="text/javascript">
 
@@ -15,7 +15,56 @@ $(function(){
 		location.href="${contextPath}/board/boardWrite.do";
 		return false;
 	});
+	
+	
+	
+	
+	getBoardList();
 });
+
+
+function getBoardList(){
+	
+	var param ="";
+	var url = "${contextPath}/board/getBoardList.do";
+	ajax2Json(url,param,getBoardListCallBack);
+}
+
+function getBoardListCallBack(res){
+	
+	var frmObj = $("#frm");
+	var pageNum = $("#frm").find("input[name=pageNum]");
+	var pagingNum = $("#frm").find("input[name=pagingNum]");
+	var pageCnt = $("#frm").find("input[name=pageCnt]");
+	var totalCnt = res.totalCnt;
+	
+	var htmlText = "";
+	
+	for(var row=0;row<res.list.length;row++){
+		
+		htmlText+="<tr><td class='center'>"+row+"</td><td>"+res.list[row].title+"</td><td class='center'>"+res.list[row].writeUserSeq+"</td><td class='center'>"+res.list[row].writeDate+"</td><td class='center'>0</td></tr>";
+		
+		
+		
+	}
+	
+	$("#tbody").empty().append(htmlText);
+	
+	
+	
+	
+	
+	//페이징
+	var pagingText = "";
+	
+	
+	pagingText += "<li><a href='#' aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li>";
+	pagingText += "<li><a href='#'>1</a></li>";
+	pagingText += "<li><a href='#' aria-label='Next'><span aria-hidden='true'>&raquo;</span></a></li>";
+	
+	$("#pagination").empty().append(pagingText);
+
+}
 
 
 </script>
@@ -24,60 +73,28 @@ $(function(){
 </head>
 <body>
 	<div class="title">
-		자유 게시판
+		<div class="page-header">
+		  	<h1>자유게시판<small>게시판리스트</small></h1>
+		</div>
 	</div>
-	<div class="tableDiv">
 	
-		<table>
-			<colgroup>
-			<col width="10%" />
-			<col width="50%" />
-			<col width="10%" />
-			<col width="20%" />
-			<col width="10%" />
-			</colgroup>
+	<div>
+	
+		<table class="table table-striped">
 			<thead>
 				<tr><td colspan="2">제목</td><td>작성자</td><td>작성일</td><td>조회</td></tr>
 			</thead>
-			<tbody>
-				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
-				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
-				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
-				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
-				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
-				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
-				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
-				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
-				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
-				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
-				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
-				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
-				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
-				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
-				<tr><td class="center">1</td><td>안녕하세요?</td><td class="center">김선목</td><td class="center">2018-06-06</td><td class="center">0</td></tr>
+			<tbody id="tbody">
 			</tbody>
 		</table>
 	</div>
 	
-	<div class="buttonDiv">
-		<button type="button" id="btn_write">글쓰기</button>
-	</div>
-	
 	<div class="paging">
-		<a>&lt;&lt;</a>
-		<a>&lt;</a>
-		<a>1</a>
-		<a>2</a>
-		<a>3</a>
-		<a>4</a>
-		<a>5</a>
-		<a>6</a>
-		<a>7</a>
-		<a>8</a>
-		<a>9</a>
-		<a>10</a> 
-		<a>&gt;</a> 
-		<a>&gt;&gt;</a> 
+		<nav>
+			<ul class="pagination" id="pagination">
+				
+			</ul>
+		</nav>
 	</div>
 	
 	<div class="searchDiv">
@@ -96,8 +113,14 @@ $(function(){
 			<option>작성자</option>
 		</select>
 		<form method="post" name="frm">
+			<input type="hidden" name="pageNum" value=""/>
+			<input type="hidden" name="pagingNum" value=""/>
+			<input type="hidden" name="pageCnt" value="10"/>
+		
+		
 			<input type="text" name="searchWord" value=""/>
 			<button type="button">검색</button>
+			<button type="button" id="btn_write">글쓰기</button>
 		</form>
 	</div>
 </body>

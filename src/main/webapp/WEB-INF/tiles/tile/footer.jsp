@@ -8,6 +8,6 @@
 </head>
 <body>
 	<hr>
-	<h6>made by Kim.Seon.Mok</h6>
+	<h6>made by Kim.Seon.Mok AND Lee.Ji.Young</h6>
 </body>
 </html>

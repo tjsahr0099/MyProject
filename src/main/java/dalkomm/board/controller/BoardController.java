@@ -1,7 +1,7 @@
 package dalkomm.board.controller;
 
 import java.util.HashMap;
-import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -30,6 +30,17 @@ public class BoardController {
         return mv;
     }
 	
+	@RequestMapping(value="/board/getBoardList.do")
+	@ResponseBody
+	public  Map<String,Object> getboardList(@RequestParam Map<String,Object> params) throws Exception{
+		Map<String,Object> map = new HashMap<String,Object>();
+		List<Object> list = boardService.getBoardList(params);
+		int totalCnt = boardService.getBoardListCnt(params);
+		map.put("list", list);
+		map.put("totalCnt", totalCnt);
+        return map;
+    }
+	
 	@RequestMapping(value="/board/boardWrite.do")
 	public ModelAndView boardWrite() throws Exception{
         ModelAndView mv = new ModelAndView("");
@@ -55,8 +66,10 @@ public class BoardController {
         result = boardService.insertBoard(params);
         if(result>0) {
         	map.put("msg", "작성이 완료되었습니다.");
+        	map.put("code", "S");
         }else {
         	map.put("msg", "작성에 오류가 있습니다.");
+        	map.put("code", "F");
         }
         
         

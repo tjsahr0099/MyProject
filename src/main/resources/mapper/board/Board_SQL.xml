@@ -2,12 +2,28 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
 <mapper namespace="board">
+
+	<resultMap id="boardResultMap" type="hashmap">
+	  <result property="boardSeq" column="BOARD_SEQ"/>
+	  <result property="title" column="TITLE"/>
+	  <result property="cont" column="CONT"/>
+	  <result property="writeUserSeq" column="WRITE_USER_SEQ"/>
+	  <result property="writeDate" column="WRITE_DATE"/>
+	  <result property="depth" column="DEPTH"/>
+	  <result property="parentBoardSeq" column="PARENT_BOARD_SEQ"/>
+	  <result property="secretYn" column="SECRET_YN"/>
+	</resultMap>
      
-     <select id="selectBoardList" parameterType="hashmap" resultType="hashmap">
-        <![CDATA[
-            SELECT *
-            FROM T_USER
-        ]]>
+    <select id="getBoardList" parameterType="hashmap" resultMap="boardResultMap">
+            SELECT BOARD_SEQ,TITLE,CONT,WRITE_USER_SEQ,WRITE_DATE,DEPTH,PARENT_BOARD_SEQ,SECRET_YN
+            FROM T_BOARD
+        
+    </select>
+    
+     <select id="getBoardListCnt" parameterType="hashmap" resultType="int">
+            SELECT count(1)
+            FROM T_BOARD
+        
     </select>
     
     <insert id="insertBoard" parameterType="hashmap">

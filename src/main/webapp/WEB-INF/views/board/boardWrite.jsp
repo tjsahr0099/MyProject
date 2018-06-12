@@ -17,6 +17,9 @@ $(function(){
 		console.log(param);
 		ajax2Json("${contextPath}/board/insertBoard.do",param,function(res){
 			alert(res.msg);
+			if(res.code=="S"){
+				location.href="${contextPath}/board/boardList.do";
+			}
 		});
 	});
 	

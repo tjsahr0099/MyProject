@@ -8,14 +8,21 @@
 <title>Insert title here</title>
 
 
-<!-- css -->
-<link rel="stylesheet" type="text/css" href="${contextPath }/resources/css/common.css?${timestamp}">
+
 
 <!-- javascript -->
 <script type="text/javascript" src="${contextPath }/resources/js/jquery/jquery-3.3.1.min.js" ></script>
 <script type="text/javascript" src="${contextPath }/resources/js/common.js" ></script>
 <script type="text/javascript" src="${contextPath }/resources/js/html2canvas/html2canvas.min.js" ></script>
-<script type="text/javascript" src="${contextPath }/resources/js/fileSaver/fileSaver.js" ></script>
+<%-- <script type="text/javascript" src="${contextPath }/resources/js/fileSaver/fileSaver.js" ></script> --%>
+
+<!-- bootstrap -->
+<script type="text/javascript" src="${contextPath }/resources/bootstrap-3.3.2-dist/js/bootstrap.min.js" ></script>
+<link rel="stylesheet" type="text/css" href="${contextPath }/resources/bootstrap-3.3.2-dist/css/bootstrap-theme.min.css?${timestamp}">
+<link rel="stylesheet" type="text/css" href="${contextPath }/resources/bootstrap-3.3.2-dist/css/bootstrap.min.css?${timestamp}">
+
+<!-- css -->
+<link rel="stylesheet" type="text/css" href="${contextPath }/resources/css/common.css?${timestamp}">
 
 </head>
 <body>

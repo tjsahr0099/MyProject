@@ -1,5 +1,6 @@
 package dalkomm.board.service.impl;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -22,6 +23,16 @@ public class BoardServiceImpl implements BoardService{
 	public int insertBoard(Map<String, Object> params) {
 		
 		return boardDAO.insertBoard(params);
+	}
+
+	@Override
+	public List<Object> getBoardList(Map<String, Object> params) {
+		return boardDAO.getBoardList(params);
+	}
+
+	@Override
+	public int getBoardListCnt(Map<String, Object> params) {
+		return boardDAO.getBoardListCnt(params);
 	}
 
 }

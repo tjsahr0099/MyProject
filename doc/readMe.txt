@@ -14,3 +14,17 @@ jsp파일은 소문자로 시작 후 카멜 표기법 사용
 webapp/resources/css
 webapp/resources/image
 webapp/resources/js
+
+
+2018-06-13 작성
+부트스트랩 추가함. 기존 폴더 기준으로 가지 않고 resources바로 밑에 부트스트랩 프레임워크 폴더 전체를 붙여 넣음. js와 css등 여러 폴더가 합쳐져 있어서 이렇게 함.
+기존 css제거하고 부트스트랩으로 변경할 예정임.
+
+참고
+https://www.w3schools.com/booTsTrap/bootstrap_tables.asp
+http://bootstrapk.com/components/#wells
+
+
+메뉴 부분 수정. 부트스트랩 추가. 메뉴 선택 표시 추가
+게시판 리스트 부분 부트스트랩 추가.
+게시판 페이징 추가 중...
