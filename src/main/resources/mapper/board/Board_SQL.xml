@@ -4,6 +4,7 @@
 <mapper namespace="board">
 
 	<resultMap id="boardResultMap" type="hashmap">
+	  <result property="rnum" column="RNUM"/>
 	  <result property="boardSeq" column="BOARD_SEQ"/>
 	  <result property="title" column="TITLE"/>
 	  <result property="cont" column="CONT"/>
@@ -15,9 +16,12 @@
 	</resultMap>
      
     <select id="getBoardList" parameterType="hashmap" resultMap="boardResultMap">
-            SELECT BOARD_SEQ,TITLE,CONT,WRITE_USER_SEQ,WRITE_DATE,DEPTH,PARENT_BOARD_SEQ,SECRET_YN
-            FROM T_BOARD
-        
+    
+   		SELECT A.* FROM (
+			SELECT @rownum := @rownum+1 AS RNUM, BOARD_SEQ,TITLE,CONT,WRITE_USER_SEQ,WRITE_DATE,DEPTH,PARENT_BOARD_SEQ,SECRET_YN
+			FROM T_BOARD  , (SELECT @rownum := 0) AS R
+        ) A
+         WHERE RNUM BETWEEN #{onePageCnt} * ( #{pageNum} - 1 ) + 1  AND #{onePageCnt} * ( '1' ); 
     </select>
     
      <select id="getBoardListCnt" parameterType="hashmap" resultType="int">

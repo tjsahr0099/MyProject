@@ -9,7 +9,6 @@
 
 
 
-
 <!-- javascript -->
 <script type="text/javascript" src="${contextPath }/resources/js/jquery/jquery-3.3.1.min.js" ></script>
 <script type="text/javascript" src="${contextPath }/resources/js/common.js" ></script>

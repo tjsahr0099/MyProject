@@ -25,7 +25,7 @@ $(function(){
 
 function getBoardList(){
 	
-	var param ="";
+	var param =$("#frm").serialize();
 	var url = "${contextPath}/board/getBoardList.do";
 	ajax2Json(url,param,getBoardListCallBack);
 }
@@ -49,9 +49,7 @@ function getBoardListCallBack(res){
 	
 	for(var row=0;row<res.list.length;row++){
 		
-		htmlText+="<tr><td class='center'>"+row+"</td><td>"+res.list[row].title+"</td><td class='center'>"+res.list[row].writeUserSeq+"</td><td class='center'>"+res.list[row].writeDate+"</td><td class='center'>0</td></tr>";
-		
-		
+		htmlText+="<tr><td class='center'>"+res.list[row].rnum+"</td><td>"+res.list[row].title+"</td><td class='center'>"+res.list[row].writeUserSeq+"</td><td class='center'>"+res.list[row].writeDate+"</td><td class='center'>0</td></tr>";
 		
 	}
 	
@@ -79,7 +77,7 @@ function getBoardListCallBack(res){
 
 </script>
 
-
+ 
 </head>
 <body>
 	<div class="title">
@@ -123,8 +121,8 @@ function getBoardListCallBack(res){
 			<option>작성자</option>
 		</select>
 		<form method="post" name="frm" id="frm">
-			<input type="hidden" name="pageNum" value=""/>
-			<input type="hidden" name="pagingNum" value=""/>
+			<input type="hidden" name="pageNum" value="1"/>
+			<input type="hidden" name="pagingNum" value="1"/>
 			<input type="hidden" name="onePageCnt" value="10"/>
 		
 		
