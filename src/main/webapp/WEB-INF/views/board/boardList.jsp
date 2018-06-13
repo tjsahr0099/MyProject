@@ -33,10 +33,17 @@ function getBoardList(){
 function getBoardListCallBack(res){
 	
 	var frmObj = $("#frm");
-	var pageNum = $("#frm").find("input[name=pageNum]");
-	var pagingNum = $("#frm").find("input[name=pagingNum]");
-	var pageCnt = $("#frm").find("input[name=pageCnt]");
+	var pageNum = $("#frm").find("input[name=pageNum]").val();
+	var pagingNum = $("#frm").find("input[name=pagingNum]").val();
+	var onePageCnt = $("#frm").find("input[name=onePageCnt]").val();
 	var totalCnt = res.totalCnt;
+	var totalPageCnt = Math.ceil(totalCnt/onePageCnt);
+	
+	console.log(onePageCnt);
+	console.log(totalCnt);
+	console.log(totalPageCnt);
+	
+	
 	
 	var htmlText = "";
 	
@@ -59,7 +66,10 @@ function getBoardListCallBack(res){
 	
 	
 	pagingText += "<li><a href='#' aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li>";
-	pagingText += "<li><a href='#'>1</a></li>";
+	
+	for(var i=0;i<totalPageCnt;i++){
+		pagingText += "<li><a href='#'>"+(i+1)+"</a></li>";
+	}
 	pagingText += "<li><a href='#' aria-label='Next'><span aria-hidden='true'>&raquo;</span></a></li>";
 	
 	$("#pagination").empty().append(pagingText);
@@ -112,10 +122,10 @@ function getBoardListCallBack(res){
 			<option>내용</option>
 			<option>작성자</option>
 		</select>
-		<form method="post" name="frm">
+		<form method="post" name="frm" id="frm">
 			<input type="hidden" name="pageNum" value=""/>
 			<input type="hidden" name="pagingNum" value=""/>
-			<input type="hidden" name="pageCnt" value="10"/>
+			<input type="hidden" name="onePageCnt" value="10"/>
 		
 		
 			<input type="text" name="searchWord" value=""/>
