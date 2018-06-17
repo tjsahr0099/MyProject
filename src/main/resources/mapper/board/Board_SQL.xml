@@ -21,7 +21,28 @@
 			SELECT @rownum := @rownum+1 AS RNUM, BOARD_SEQ,TITLE,CONT,WRITE_USER_SEQ,WRITE_DATE,DEPTH,PARENT_BOARD_SEQ,SECRET_YN
 			FROM T_BOARD  , (SELECT @rownum := 0) AS R
         ) A
-         WHERE RNUM BETWEEN #{onePageCnt} * ( #{pageNum} - 1 ) + 1  AND #{onePageCnt} * ( '1' ); 
+         WHERE RNUM BETWEEN #{onePageCnt} * ( #{pageNum} - 1 ) + 1  AND #{onePageCnt} * ( #{pageNum} )
+         
+         <if test="searchDate == 'DAY'">AND WRITE_DATE BETWEEN DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 1 DAY),'%Y-%m-%d')  AND   DATE_FORMAT(NOW(),'%Y-%m-%d')</if>
+         <if test="searchDate == 'WEEK'">AND WRITE_DATE BETWEEN DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 1 WEEK),'%Y-%m-%d')  AND   DATE_FORMAT(NOW(),'%Y-%m-%d')</if>
+         <if test="searchDate == 'MONTH'">AND WRITE_DATE BETWEEN DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 1 MONTH),'%Y-%m-%d')  AND   DATE_FORMAT(NOW(),'%Y-%m-%d')</if>
+         <if test="searchDate == 'HALF-YEAR'">AND WRITE_DATE BETWEEN DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 6 MONTH),'%Y-%m-%d')  AND   DATE_FORMAT(NOW(),'%Y-%m-%d')</if>
+         <if test="searchDate == 'YEAR'">AND WRITE_DATE BETWEEN DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 1 YEAR),'%Y-%m-%d')  AND   DATE_FORMAT(NOW(),'%Y-%m-%d')</if>
+         
+         <if test="searchWord != ''">
+	         <if test='searchWordOption == "CT"'>
+	         AND A.CONT LIKE CONCAT('%' , #{searchWord} , '%') OR A.TITLE LIKE CONCAT('%' , #{searchWord} , '%')
+	         </if>
+	         <if test='searchWordOption == "C"'>
+	         AND A.CONT LIKE CONCAT('%' , #{searchWord} , '%')
+	         </if>
+	         <if test='searchWordOption == "T"'>
+	         AND A.TITLE LIKE CONCAT('%' , #{searchWord} , '%')
+	         </if>
+	         <if test='searchWordOption == "W"'>
+	         AND A.WRITE_USER_SEQ LIKE CONCAT('%' , #{searchWord} , '%') -- 회원 테이블 만들어지면 이름 검색으로 수정하기
+	         </if>
+         </if>
     </select>
     
      <select id="getBoardListCnt" parameterType="hashmap" resultType="int">
