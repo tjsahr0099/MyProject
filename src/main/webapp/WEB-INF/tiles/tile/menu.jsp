@@ -26,6 +26,7 @@ $(function(){
 	        <li><a href="${contextPath }/board/boardList.do">게시판</a></li>
 	        <li><a href="${contextPath }/card/cardCreate.do">카드생성</a></li>
 	        <li><a href="#section3">Photos</a></li>
+	        <li><a href="${contextPath }/dateMap/dateMap.do">데이트 지도</a></li>
 	      </ul><br>
 	</div>
 	
